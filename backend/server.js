@@ -9,6 +9,7 @@ const { userRouter } = require("./Routers/routes/userRouter");
 //built-in middlewares
 app.use(express.json());
 app.use("/users", userRouter);
+app.use("/users/:Info", userRouter);
 
 //third-party middleware
 app.use(cors());
