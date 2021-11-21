@@ -1,7 +1,9 @@
-const users = require("../../../Data/UserInfoDB");
+const { users } = require("../../../Data/UserInfoDB");
 
 const getAllUsers = (req, res) => {
-  res.send(users);
+  users.map((user) => {
+    res.send(user.userInfo);
+  });
 };
 
 module.exports = { getAllUsers };
