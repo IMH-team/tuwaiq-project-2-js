@@ -5,7 +5,7 @@ const getAllInformation = (req, res) => {
     res.send(user.userInfo);
   });
 };
-
+// hello
 const getOneInfo = (req, res) => {
   const user = users.map((user) => {
     const info = req.params.Info;
