@@ -1,4 +1,4 @@
-const { users } = require("../../../Data/UserInfoDB");
+const { users } = require("../../Data/UserInfoDB");
 
 const getAllInformation = (req, res) => {
   const user = users.map((user) => {
