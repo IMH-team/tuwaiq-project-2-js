@@ -1,8 +1,14 @@
 const express = require('express')
 const permissionsRouter = express.Router();
 
-const {getAllPermessions} = require('../controllers/permissions')
+const {
+    getAllPermessions,
+    putPermession
+} = require('../controllers/permissions')
 
-permissionsRouter.get('/permissions', getAllPermessions);
+permissionsRouter.get('/', getAllPermessions);
+permissionsRouter.post('/:id', putPermession);
 
-module.exports = {permissionsRouter}
+module.exports = {
+    permissionsRouter
+}
