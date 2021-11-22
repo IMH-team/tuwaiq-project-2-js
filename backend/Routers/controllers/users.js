@@ -6,11 +6,11 @@ const getAllInformation = (req, res) => {
   });
 };
 
-const getOneInfo = (req, res) => {
-  const user = users.map((user) => {
-    const info = req.params.Info;
-    user.userInfo.hasOwnProperty(info)
-  });
-};
+// const getOneInfo = (req, res) => {
+//   const user = users.map((user) => {
+//     const info = req.params.Info;
+//     user.userInfo.hasOwnProperty(info)
+//   });
+// };
 
-module.exports = { getAllInformation, getOneInfo };
+module.exports = { getAllInformation };
