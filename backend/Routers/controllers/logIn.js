@@ -1,4 +1,4 @@
-const {LoginUser}= require("../../../Data/LoginDB");
+const {LoginUser}= require("../../Data/LoginDB");
 
 const getDataForLogIn= (req,res)=>{
     const getDatatoLogIn= LoginUser.find((ele)=>{
