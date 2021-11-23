@@ -1,0 +1,9 @@
+.myCard {
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.myCard:hover {
+  top: -2px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
