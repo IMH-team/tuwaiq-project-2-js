@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Container, Row, Card, Col } from "react-bootstrap";
+import "./OneInformation.css";
 
 export default function OneInformation() {
   const params = useParams();
@@ -13,23 +14,98 @@ export default function OneInformation() {
       const data = await response.json();
       const info = data.find((user) => user.userId === "1010101010");
       const oneInfo = info.userInfo.find((oneInfo) => oneInfo.name === name);
-      //   console.log(oneInfo.data);
       setData(oneInfo.data);
     })();
   }, []);
 
   return (
-    <Container>
-      <Row md={4}>
+    <Container className="myContainer">
+      <Row md={3}>
         <Col>
           {data &&
-            data.map((d) => {
-              console.log(d.type);
-              <Card>
-                <Card.Body style={{ textAlign: "center" }}>
-                  <Card.Title>{d.type}</Card.Title>
-                </Card.Body>
-              </Card>;
+            data.map((elem) => {
+              console.log(name);
+              if (name === "Driving_Licenses") {
+                return (
+                  <Card className="myCard">
+                    <Card.Body style={{ textAlign: "center" }}>
+                      <Card.Text>
+                        <Row>
+                          <Col>License type</Col>
+                          <Col>{elem.type}</Col>
+                        </Row>
+                      </Card.Text>
+                      <Card.Text>
+                        <Row>
+                          <Col>License status</Col>
+                          <Col>{elem.state}</Col>
+                        </Row>
+                      </Card.Text>
+                      <Card.Text>
+                        <Row>
+                          <Col>Issuing date</Col>
+                          <Col>{elem.releaseDate}</Col>
+                        </Row>
+                      </Card.Text>
+                      <Card.Text>
+                        <Row>
+                          <Col>Expiry Date</Col>
+                          <Col>{elem.expiryDate}</Col>
+                        </Row>
+                      </Card.Text>
+                    </Card.Body>
+                  </Card>
+                );
+              } else if (name === "National_Address") {
+                return (
+                  <Card className="myCard">
+                    <Card.Body style={{ textAlign: "center" }}>
+                      <Card.Text>
+                        <Row>
+                          <Col>Building Number</Col>
+                          <Col>{elem.buildingNumber}</Col>
+                        </Row>
+                      </Card.Text>
+                      <Card.Text>
+                        <Row>
+                          <Col>Postal Code</Col>
+                          <Col>{elem.postalCode}</Col>
+                        </Row>
+                      </Card.Text>
+                      <Card.Text>
+                        <Row>
+                          <Col>Additional Code</Col>
+                          <Col>{elem.additionalCode}</Col>
+                        </Row>
+                      </Card.Text>
+                      <Card.Text>
+                        <Row>
+                          <Col>Unit Number</Col>
+                          <Col>{elem.unitNumber}</Col>
+                        </Row>
+                      </Card.Text>
+                      <Card.Text>
+                        <Row>
+                          <Col>Short Title</Col>
+                          <Col>{elem.shortTitle}</Col>
+                        </Row>
+                      </Card.Text>
+                    </Card.Body>
+                  </Card>
+                );
+              } else {
+                return (
+                  <Card className="myCard">
+                    <Card.Body style={{ textAlign: "center" }}>
+                      <Card.Text>
+                        <Row>
+                          <Col>Building Number</Col>
+                        </Row>
+                      </Card.Text>
+                    </Card.Body>
+                  </Card>
+                );
+              }
             })}
         </Col>
       </Row>

@@ -21,14 +21,15 @@ const Dashboard = () => {
         <Row md={4}>
           {data &&
             data.map((elem) => {
+              const nameWithOutUnderscore = elem.name.replaceAll("_", " ");
               return (
                 <Link
-                  to={elem.name}
+                  to={`/OneInformation/${elem.name}`}
                   style={{ textDecoration: "none", color: "#42ae9f" }}
                 >
                   <MyCard
                     key={elem.name}
-                    title={elem.name}
+                    title={nameWithOutUnderscore}
                     img={elem.image}
                     number={elem.data.length}
                   />
