@@ -50,3 +50,21 @@ h3 {
   cursor: pointer !important;
 
 }
+#svg{
+   margin-left: auto;
+   margin-right: auto;
+   width: 50%;
+   height: 20px;
+   width: 150px;
+   color: #748194 ;
+
+}
+#h5{
+  margin-left: auto;
+  margin-right: auto;
+  width: 12%;
+  color: #748194 ;
+}
+.permits{
+  height: 150px;
+}
