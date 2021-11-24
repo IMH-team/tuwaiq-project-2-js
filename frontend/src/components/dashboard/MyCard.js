@@ -7,7 +7,8 @@ export default function MyCard(props) {
     <Col>
       <Card className="myCard">
         <Card.Body style={{ textAlign: "center" }}>
-          <img src={props.img} alt={props.title} />
+          <img className="myImage" src={props.img} alt={props.title} />
+          <hr />
           <Card.Title>{props.title}</Card.Title>
           <Card.Text>{props.number}</Card.Text>
         </Card.Body>
