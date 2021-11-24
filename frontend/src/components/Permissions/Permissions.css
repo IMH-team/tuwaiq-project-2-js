@@ -1,0 +1,52 @@
+h3 {
+  font-size: 1.728rem;
+}
+
+.card-imgg {
+  height: 35px !important;
+  width: 49px !important;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  margin-top: 15px;
+  opacity: 0.2;
+}
+
+#card-imageee {
+  height: 35px !important;
+  width: 49px !important;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  margin-top: 15px;
+  cursor: pointer !important;
+}
+
+
+.disabledd {
+  opacity: 0.5;
+  background: #ccc !important;
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: space-around !important;
+  align-items: center !important;
+  height: 150px !important;
+  padding: 10px !important;
+}
+
+.container {
+  margin-bottom: 25px;
+}
+
+#last-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  height: 150px;
+  padding: 10px;
+  cursor: pointer !important;
+
+}
