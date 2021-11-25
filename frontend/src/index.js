@@ -5,8 +5,8 @@ import App from "./App";
 import Dashboard from "./components/dashboard/index";
 import OneInformation from "./components/dashboard/OneInformation";
 import Permissions from "./components/Permissions/Permissions";
-import "bootstrap/dist/css/bootstrap.min.css";
 import Permits from "./components/Permits/Permits"
+import "bootstrap/dist/css/bootstrap.min.css";
 // import provider
 // import store
 
@@ -17,8 +17,8 @@ ReactDOM.render(
       <Route path="/" element={<App />}></Route>
       <Route path="/Dashboard" element={<Dashboard />}></Route>
       <Route path="/Permissions" element={<Permissions />}></Route>
-      <Route path="/OneInformation/:name" element={<OneInformation />}></Route>
       <Route path="/Permits" element={<Permits />}></Route>
+      <Route path="/OneInformation/:name" element={<OneInformation />}></Route>
     </Routes>
   </BrowserRouter>,
   document.getElementById("root")
