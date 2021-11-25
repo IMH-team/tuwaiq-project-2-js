@@ -4,3 +4,10 @@
 #button{
    background-color:  #27bcfd;
 }
+#myCard{
+    padding: 20px !important;
+}
+
+#permits-card-body{
+    padding: 20px;
+}
