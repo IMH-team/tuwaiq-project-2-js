@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "./navigation.css";
 import {
   Container,
   Row,
@@ -14,7 +15,7 @@ import {
   DropdownButton,
   Dropdown,
 } from "react-bootstrap";
-import "./navigation.css";
+
 
 const Navigation = () => {
   return (
@@ -109,6 +110,8 @@ const Navigation = () => {
                 <img src="https://tawakkalna.sdaia.gov.sa/assets/img/illustrations/twlogo.png" />
               </Navbar.Brand>
             </Col>
+            <Col sm></Col>
+            <Col sm></Col>
             <Col sm></Col>
             <Col sm></Col>
             <Col sm>

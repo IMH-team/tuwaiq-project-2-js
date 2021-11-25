@@ -1,0 +1,51 @@
+.card{
+    margin-bottom: 10px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+    border-radius: 10px !important;
+    border-color: white !important;
+}
+#Helth-condition{
+    margin-top: 10px;
+    height: 30px;
+    width: 30px;
+}
+#ScanQr{
+    margin-top: 10px;
+    height: 30px;
+    width: 30px; 
+    
+}
+#family{
+    margin-top: 10px;
+    height: 40px;
+    width: 40px; 
+}
+#Covid-19{
+    margin-top: 10px;
+    height: 40px;
+    width: 40px;
+}
+#Helth{
+    margin-top: 10px;
+    height: 40px;
+    width: 40px; 
+}
+.card-text{
+    color: rgba(0, 0, 0, 0.55);
+}
+#statix{
+    margin-top: 10px;
+}
+
+#Helth-card{
+    background-image: linear-gradient(306deg, #00431c , #006e2e); background-color: #FFFFFF !important;
+    border-radius: 10px !important;
+    border-color: white !important;
+    color: white;
+}
+.right-side:hover{
+    
+   background-color: rgba(46, 175, 161, 0.1);
+   border-color: rgba(46, 175, 161, 0.1) !important;
+   cursor: pointer;
+}
