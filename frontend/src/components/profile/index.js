@@ -1,9 +1,12 @@
 import React from "react";
 import "./profile.css";
-import { Container, Row, Card, Col,Button } from "react-bootstrap";
+import Navigation from "../navigation/index";
+import Footer from "../footer/index";
+import { Container, Row, Card, Col, Button } from "react-bootstrap";
 const Profile = () => {
   return (
     <div className="App">
+      <Navigation />
       <Container>
         <Row id="profile">
           <Col sm={11}>
@@ -113,14 +116,22 @@ const Profile = () => {
                       <label>New Password</label>
                     </Col>
                     <Row>
-                    <Col>
-                    <input id="ChangePass" className="inputsToLogIn" type="password" name="password" placeholder="   Change Password"/>
-                    </Col>
-                    <Row>
-                    <Col>
-                    <Button id="Save" variant="primary">Save</Button>{' '}
-                    </Col>
-                    </Row>
+                      <Col>
+                        <input
+                          id="ChangePass"
+                          className="inputsToLogIn"
+                          type="password"
+                          name="password"
+                          placeholder="   Change Password"
+                        />
+                      </Col>
+                      <Row>
+                        <Col>
+                          <Button id="Save" variant="primary">
+                            Save
+                          </Button>{" "}
+                        </Col>
+                      </Row>
                     </Row>
                   </Row>
                 </Row>
@@ -129,6 +140,7 @@ const Profile = () => {
           </Col>
         </Row>
       </Container>
+      <Footer />
     </div>
   );
 };

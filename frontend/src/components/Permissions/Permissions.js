@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Container, Row, Col, Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./Permissions.css";
+import Navigation from "../navigation/index";
+import Footer from "../footer/index";
 import cart from "./cart.png";
 import car from "./car.png";
 import gathering from "./gathering.png";
@@ -24,13 +26,7 @@ export default function Permissions() {
 
   return (
     <div>
-      <Container>
-        <Row>
-          <Col>
-            <h3> Permits </h3>{" "}
-          </Col>{" "}
-        </Row>{" "}
-      </Container>
+      <Navigation />
       <Container>
         <Row>
           <Col>
@@ -97,7 +93,10 @@ export default function Permissions() {
           </Col>
 
           <Col>
-            <Link to="/Permits" style={{textDecoration: 'none', color: "black"}}>
+            <Link
+              to="/Permits"
+              style={{ textDecoration: "none", color: "black" }}
+            >
               <Card id="last-card">
                 <img id="card-imageee" src={gathering} alt="" />
                 <div style={{ margin: "0 20px" }}>
@@ -169,6 +168,7 @@ export default function Permissions() {
           </Col>
         </Row>
       </Container>
+      <Footer />
     </div>
   );
 }

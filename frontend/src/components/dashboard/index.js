@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import Navigation from "../navigation/index";
+import Footer from "../footer/index";
 import MyCard from "./MyCard";
 
 const Dashboard = () => {
@@ -17,6 +19,7 @@ const Dashboard = () => {
 
   return (
     <div className="App">
+      <Navigation />
       <Container>
         <Row md={4}>
           {data &&
@@ -38,6 +41,7 @@ const Dashboard = () => {
             })}
         </Row>
       </Container>
+      <Footer />
     </div>
   );
 };
