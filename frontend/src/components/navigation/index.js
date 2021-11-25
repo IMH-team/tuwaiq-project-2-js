@@ -34,7 +34,7 @@ const Navigation = () => {
                 </Offcanvas.Header>
                 <Offcanvas.Body>
                   <Nav className="justify-content-end flex-grow-1 pe-3">
-                    <Nav.Link href="#action1">
+                    <Nav.Link href="/">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="16"
@@ -47,7 +47,7 @@ const Navigation = () => {
                       </svg>
                       Home
                     </Nav.Link>
-                    <Nav.Link href="#action2">
+                    <Nav.Link href="/Permissions">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="16"
@@ -90,7 +90,7 @@ const Navigation = () => {
                       </svg>
                       Notifcations
                     </Nav.Link>
-                    <Nav.Link href="#action2">
+                    <Nav.Link href="/Dashboard">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="16"
@@ -107,7 +107,7 @@ const Navigation = () => {
                 </Offcanvas.Body>
               </Navbar.Offcanvas>
               <Navbar.Brand href="#">
-                <img src="https://tawakkalna.sdaia.gov.sa/assets/img/illustrations/twlogo.png" />
+                <img src="https://tawakkalna.sdaia.gov.sa/assets/img/illustrations/twlogo.png" alt=""/>
               </Navbar.Brand>
             </Col>
             <Col sm></Col>
@@ -119,9 +119,8 @@ const Navigation = () => {
                 <Dropdown.Toggle variant="success" id="dropdown-basic">
                   My Profile
                 </Dropdown.Toggle>
-
                 <Dropdown.Menu>
-                  <Dropdown.Item href="#/action-1">My profile</Dropdown.Item>
+                  <Dropdown.Item href="/Profile">My profile</Dropdown.Item>
                   <Dropdown.Item href="#/action-2">Sign out</Dropdown.Item>
                 </Dropdown.Menu>
               </Dropdown>

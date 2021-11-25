@@ -9,6 +9,8 @@ import {
   FormGroup,
 } from "react-bootstrap";
 import axios from "axios";
+import Navigation from "../navigation/index";
+import Footer from "../footer/index";
 import "./Permits.css";
 
 export default function Permits() {
@@ -43,12 +45,8 @@ export default function Permits() {
 
   return (
     <div>
-      <h1>Inside Permits</h1>
-      <Container
-        style={{
-          marginTop: "30px",
-        }}
-      >
+      <Navigation />
+      <Container style={{ marginTop: "30px" }}>
         <Row>
           <Col>
             <Card id="permits-card-body">
@@ -107,7 +105,6 @@ export default function Permits() {
                     }}
                     type="submit"
                   >
-                    {" "}
                     Request Permit{" "}
                   </Button>
                 </FormGroup>
@@ -116,6 +113,7 @@ export default function Permits() {
           </Col>
         </Row>
       </Container>
+      <Footer />
     </div>
   );
 }

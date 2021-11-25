@@ -6,18 +6,19 @@ import Dashboard from "./components/dashboard/index";
 import OneInformation from "./components/dashboard/OneInformation";
 import Permissions from "./components/Permissions/Permissions";
 import Permits from "./components/Permits/Permits";
+import Profile from "./components/profile/index";
 import "bootstrap/dist/css/bootstrap.min.css";
 // import provider
 // import store
 
 ReactDOM.render(
-  // The provider will enable the child components to access the store
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<App />}></Route>
       <Route path="/Dashboard" element={<Dashboard />}></Route>
       <Route path="/Permissions" element={<Permissions />}></Route>
       <Route path="/Permits" element={<Permits />}></Route>
+      <Route path="/Profile" element={<Profile />}></Route>
       <Route path="/OneInformation/:name" element={<OneInformation />}></Route>
     </Routes>
   </BrowserRouter>,
