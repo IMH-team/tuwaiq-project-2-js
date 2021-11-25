@@ -2,11 +2,12 @@ const permissions = [
   {
     userId: "1010101010",
     permission: [
-      // {
-      //   type: "",
-      //   place: "",
-      //   numberOfPeople: "",
-      // },
+      {
+        type: "Govirment",
+        place: "Najran",
+        numberOfPeople: "20",
+        
+      },
     ],
   },
   {
