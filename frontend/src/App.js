@@ -5,6 +5,8 @@ import Dashboard from "./components/dashboard/index";
 import Footer from "./components/footer/index"
 // import HomePage from "./components/Homepage";
 import SignIn from "./components/SignIn/index"
+import SignUp from "./components/sign-up";
+import Profile from "./components/profile/index"
 
 require("dotenv").config();
 
@@ -13,8 +15,10 @@ const App = () => {
     <div className="App">
       <Navigation />
       <Dashboard />
-      <SignIn/>
+      {/* <SignUp/> */}
+      {/* <SignIn/> */}
       {/* <HomePage/> */}
+      <Profile/>
       <Footer/>
     </div>
   );

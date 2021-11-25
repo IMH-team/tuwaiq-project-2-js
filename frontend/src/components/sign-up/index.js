@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import {Button, Container, Row, Card, Col } from "react-bootstrap";
-import "./signin.css"
-const SignIn = () => {
+import "./sign-up.css"
+const SignUp = () => {
 	return <div className="App">
         
         <Container>
@@ -17,14 +17,16 @@ const SignIn = () => {
     <Card className="Signin">
   <Card.Body>
   <Row>
-    <Col><Card.Title>Login</Card.Title></Col>
-    <Col id="signUp"><Link to="" className="colorLink">Sign up</Link></Col>
+    <Col><Card.Title>SignUp</Card.Title></Col>
+    <Col id="signUp"><Link to="" className="colorLink">Sign in</Link></Col>
   </Row>
     
    
     <Card.Text>
      <input className="inputsToLogIn" type="text" name="NationalId" placeholder="   National-ID/Iqama"/>
+     <input className="inputsToLogIn" type="email" name="NationalId" placeholder="   email"/>
      <input className="inputsToLogIn" type="password" name="password" placeholder="   Password"/>
+     <input className="inputsToLogIn" type="password" name="password" placeholder="   Confirm Password"/>
     </Card.Text>
     <Row id="rememebrme">
     <Col>
@@ -43,4 +45,4 @@ const SignIn = () => {
     </div>;
 };
 
-export default SignIn;
+export default SignUp;
