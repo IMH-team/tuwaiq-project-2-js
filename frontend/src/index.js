@@ -5,7 +5,7 @@ import App from "./App";
 import Dashboard from "./components/dashboard/index";
 import OneInformation from "./components/dashboard/OneInformation";
 import Permissions from "./components/Permissions/Permissions";
-import Permits from "./components/Permits/Permits"
+import Permits from "./components/Permits/Permits";
 import "bootstrap/dist/css/bootstrap.min.css";
 // import provider
 // import store
