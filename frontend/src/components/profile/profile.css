@@ -1,0 +1,38 @@
+#profile {
+  margin-bottom: 0px;
+}
+#personal {
+  color: #2eafa1;
+}
+#members {
+  text-align: center;
+  color: #748194;
+}
+#icons {
+  width: 1.25em;
+}
+#logo-members {
+  width: 0.7em;
+  color: #2eafa1 !important;
+}
+label {
+  margin-left: 20px;
+  margin-bottom: 0.5rem;
+  color: #5e6e82;
+}
+#ChangePass {
+  width: 50%;
+  height: 50px;
+}
+#Save {
+  background-color: #27bcfd;
+  border-color: #27bcfd;
+  margin-left: 20px;
+  width: 10%;
+  border-radius: .25rem;
+}
+#MyProfile{
+    border: none !important;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+
+}
