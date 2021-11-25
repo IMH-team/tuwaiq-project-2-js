@@ -1,0 +1,50 @@
+#login {
+  margin-left: 15px;
+  width: 90%;
+  margin-bottom: 50px;
+  background-color: #2eafa1;
+  border-color: #2eafa1 ;
+}
+#login:hover {
+  background-color: #106f65 !important;
+  border-color: #106f65;
+}
+#signUp {
+  text-align: right;
+}
+.colorLink {
+  color: #2eafa1;
+  text-decoration: none;
+}
+.colorLink:hover {
+  color: #2eafa1;
+  text-decoration: underline;
+}
+.inputsToLogIn {
+  margin-left: 15px;
+  height: 5 0px;
+  width: 90%;
+  margin-bottom: 15px;
+  border-radius: 5px !important;
+  border-color: rgba(0.1, 0.1, 0.1, 0.1) !important;
+}
+.Signin {
+  border-radius: 5px !important;
+  border-color: white !important;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+}
+#twakklna-logo {
+  display: block;
+  width: 51%;
+  height: 100%;
+  margin-left: 110px;
+}
+.row {
+  margin-bottom: 20px;
+}
+#rememebrme {
+  margin-left: 15px;
+  width: 90%;
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.55);
+}
