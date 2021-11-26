@@ -1,1 +1,11 @@
+.footer-links:hover{
 
+    color: green !important;
+    background-color: none !important;
+    box-shadow: none !important;
+
+}
+.footer{
+    position: sticky !important;
+    
+}
