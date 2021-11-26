@@ -2,7 +2,10 @@
   margin-bottom: 0px;
 }
 #personal {
-  color: #2eafa1;
+  color: #2eafa1 !important;
+}
+.text-color{
+    color: black;
 }
 #members {
   text-align: center;
@@ -23,13 +26,24 @@ label {
 #ChangePass {
   width: 50%;
   height: 50px;
+  border-radius: 5px !important;
+  /* border-color: gray !important; */
+  border: 1px solid #d8e2ef !important;
+  
+  margin-bottom: 25px !important;
 }
 #Save {
   background-color: #27bcfd;
   border-color: #27bcfd;
+  /* margin-top: 10px; */
   margin-left: 20px;
   width: 10%;
   border-radius: .25rem;
+}
+#Save:hover{
+    color: #fff;
+background-color: #02b0fb;
+border-color: #02a7ef;
 }
 #MyProfile{
     border: none !important;

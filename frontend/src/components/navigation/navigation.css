@@ -4,7 +4,10 @@ img {
   margin-left: 5px;
 }
 
+.collapsed{
+  border: none !important;
 
+}
 .App {
   margin-top: 20px;
 }

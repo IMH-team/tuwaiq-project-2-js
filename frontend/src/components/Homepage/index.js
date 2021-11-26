@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Container, Row, Card, Col } from "react-bootstrap";
 import "./homepage.css";
 
+
 const HomePage = () => {
   return (
     <div className="App">
@@ -42,7 +43,8 @@ const HomePage = () => {
                   <Col sm={2}>
                     <img
                       id="Helth"
-                      src="https://bitcoinvalued.com/images/qr-code/qr-code-200px.png"
+                      src="https://pngimg.com/uploads/qr_code/qr_code_PNG12.png"
+                      
                     />
                   </Col>
                   <Col sm={10}>
