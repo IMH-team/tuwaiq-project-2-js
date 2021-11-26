@@ -22,7 +22,7 @@ const Navigation = () => {
     <div className="App">
       <Container>
         <Row>
-          <Navbar expand={false}>
+          <Navbar  expand={false}>
             <Col sm>
               <Navbar.Toggle aria-controls="offcanvasNavbar" />
               <Navbar.Offcanvas

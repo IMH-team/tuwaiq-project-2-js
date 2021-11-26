@@ -14,9 +14,9 @@ const Profile = () => {
               <Card.Body>
                 <Row>
                   <Card.Title>My Profile </Card.Title>
-                  <Row id="personal">
+                  <Row>
                     {" "}
-                    <Card.Text>
+                    <Card.Text  id="personal">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="16"
@@ -32,27 +32,27 @@ const Profile = () => {
                   </Row>
                   <Col sm={4}>
                     <Card.Text>Name</Card.Text>
-                    <Card.Text>Name</Card.Text>
+                    <Card.Text className="text-color">Name</Card.Text>
                   </Col>
                   <Col sm={2}>
                     <Card.Text>National ID</Card.Text>
-                    <Card.Text>National ID</Card.Text>
+                    <Card.Text className="text-color">National ID</Card.Text>
                   </Col>
                   <Col sm={2}>
                     <Card.Text>Birthdate</Card.Text>
-                    <Card.Text>date</Card.Text>
+                    <Card.Text className="text-color">date</Card.Text>
                   </Col>
                   <Col sm={2}>
                     <Card.Text>Gender</Card.Text>
-                    <Card.Text>gender</Card.Text>
+                    <Card.Text className="text-color">gender</Card.Text>
                   </Col>
                   <Col sm={2}>
                     <Card.Text>Blood Type</Card.Text>
-                    <Card.Text>National ID</Card.Text>
+                    <Card.Text className="text-color">National ID</Card.Text>
                   </Col>
                 </Row>
                 <hr />
-                <Row>
+                <Row >
                   <Card.Text id="personal">
                     <svg
                       id="logo-members"
@@ -97,9 +97,9 @@ const Profile = () => {
                 </Row>
                 <hr />
                 <Row>
-                  <Row id="personal">
+                  <Row >
                     {" "}
-                    <Card.Text>
+                    <Card.Text id="personal">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="16"
