@@ -26,12 +26,12 @@ const Footer = () => {
               <Navbar  variant="light">
                 <Container id="foot">
                   <Nav className="me-auto">
-                    <Nav.Link href="#home">Home</Nav.Link>
-                    <Nav.Link href="#features">About</Nav.Link>
-                    <Nav.Link href="#pricing">Services</Nav.Link>
-                    <Nav.Link href="#home">Works</Nav.Link>
-                    <Nav.Link href="#features">FAQs</Nav.Link>
-                    <Nav.Link href="#pricing">Contact Us</Nav.Link>
+                    <Nav.Link className="footer-links" href="#home">Home</Nav.Link>
+                    <Nav.Link className="footer-links" href="#features">About</Nav.Link>
+                    <Nav.Link className="footer-links" href="#pricing">Services</Nav.Link>
+                    <Nav.Link className="footer-links" href="#home">Works</Nav.Link>
+                    <Nav.Link className="footer-links" href="#features">FAQs</Nav.Link>
+                    <Nav.Link className="footer-links" href="#pricing">Contact Us</Nav.Link>
                   </Nav>
                 </Container>
               </Navbar>
