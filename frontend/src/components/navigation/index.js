@@ -33,7 +33,7 @@ const Navigation = () => {
                 </Offcanvas.Header>
                 <Offcanvas.Body>
                   <Nav className="justify-content-end flex-grow-1 pe-3">
-                    <Nav.Link href="/">
+                    <Nav.Link href="/HomePage">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="16"

@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import App from "./App";
+import HomePage from "./components/Homepage/index";
 import Dashboard from "./components/dashboard/index";
 import OneInformation from "./components/dashboard/OneInformation";
 import Permissions from "./components/Permissions/Permissions";
@@ -18,6 +19,7 @@ ReactDOM.render(
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<App />}></Route>
+      <Route path="/HomePage" element={<HomePage />}></Route>
       <Route path="/Dashboard" element={<Dashboard />}></Route>
       <Route path="/Permissions" element={<Permissions />}></Route>
       <Route path="/Permits" element={<Permits />}></Route>

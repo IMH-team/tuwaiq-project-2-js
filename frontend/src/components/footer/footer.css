@@ -1,11 +1,16 @@
-.footer-links:hover{
-
-    color: green !important;
-    background-color: none !important;
-    box-shadow: none !important;
-
+.footer-links:hover {
+  color: green !important;
+  background-color: none !important;
+  box-shadow: none !important;
 }
-.footer{
-    position: sticky !important;
-    
+
+.footer {
+  display: flex;
+  justify-content: center;
+}
+
+@media screen and (max-width: 480px) {
+  .footer {
+    flex-direction: column;
+  }
 }

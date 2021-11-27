@@ -27,7 +27,7 @@ export default function Permissions() {
   }, []);
 
   return (
-    <div>
+    <>
       <Navigation />
       <Container>
         <Row>
@@ -134,7 +134,7 @@ export default function Permissions() {
                 </svg>{" "}
                 Current Permits
               </h6>
-              {data !== 0 ? (
+              {data !== null && data.length > 0 ? (
                 <Row md={4}>
                   {data &&
                     data.map((elem) => {
@@ -150,14 +150,7 @@ export default function Permissions() {
                     })}
                 </Row>
               ) : (
-                <div
-                  style={{
-                    textAlign: "center",
-                    marginLeft: "auto",
-                    marginRight: "auto",
-                    width: "50%",
-                  }}
-                >
+                <div style={{ textAlign: "center" }}>
                   <svg
                     id="svg"
                     xmlns="http://www.w3.org/2000/svg"
@@ -169,7 +162,7 @@ export default function Permissions() {
                     <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z" />
                   </svg>{" "}
                   <div style={{ margin: "0 20px" }}>
-                    <h5 id="h5"> No permits exist </h5>{" "}
+                    <h5 style={{ color: "gray" }}> No permits exist </h5>{" "}
                   </div>
                 </div>
               )}
@@ -178,6 +171,6 @@ export default function Permissions() {
         </Row>
       </Container>
       <Footer />
-    </div>
+    </>
   );
 }
