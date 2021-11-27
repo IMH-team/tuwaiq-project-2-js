@@ -121,7 +121,7 @@ const Navigation = () => {
                 </Dropdown.Toggle>
                 <Dropdown.Menu>
                   <Dropdown.Item href="/Profile">My profile</Dropdown.Item>
-                  <Dropdown.Item href="#/action-2">Sign out</Dropdown.Item>
+                  <Link to="/SignIn"><Dropdown.Item href="#/action-2">Sign out</Dropdown.Item></Link>
                 </Dropdown.Menu>
               </Dropdown>
             </Col>

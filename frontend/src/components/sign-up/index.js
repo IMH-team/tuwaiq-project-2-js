@@ -18,7 +18,7 @@ const SignUp = () => {
   <Card.Body>
   <Row>
     <Col><Card.Title>SignUp</Card.Title></Col>
-    <Col id="signUp"><Link to="" className="colorLink">Sign in</Link></Col>
+    <Col id="signUp"><Link to="/SignIn" className="colorLink">Sign in</Link></Col>
   </Row>
     
    
@@ -34,7 +34,7 @@ const SignUp = () => {
     </Col>
     <Col id="signUp"><Link to="" className="colorLink">Forget password</Link></Col>
   </Row>
-    <Button id="login" variant="success">Next</Button>{' '}
+    <Link to="/SignIn"><Button id="login" variant="success">Next</Button></Link>{' '}
  
   </Card.Body>
 </Card>
