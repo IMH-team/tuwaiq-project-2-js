@@ -2,8 +2,24 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Container, Row, Card, Col } from "react-bootstrap";
 import "./homepage.css";
+import { useState, useEffect } from "react";
+
 
 const HomePage = () => {
+  const [name, setName] = useState("");
+  const [nationalId, setNationalId] = useState("");
+  const [halthStatus, setHalthStatus] = useState("");
+  useEffect(() => {
+    fetch("/logIn")
+      .then((response) => response.json())
+      .then((data) => {
+        const info = data.find((user) => user.userId === "1010101010");
+        console.log(info.username);
+        setName(info.username);
+        setNationalId(info.userId);
+        setHalthStatus(info.healthStatus);
+      });
+  }, []);
   return (
     <div className="App">
       <Container>
@@ -14,11 +30,11 @@ const HomePage = () => {
                 <Row>
                   <Col>
                     <Card.Text>Name </Card.Text>
-                    <Card.Title>NAme</Card.Title>
+                    <Card.Title>{name}</Card.Title>
                   </Col>
                   <Col>
                     <Card.Text>National ID</Card.Text>
-                    <Card.Title>National ID</Card.Title>
+                    <Card.Title>{nationalId}</Card.Title>
                   </Col>
                 </Row>
               </Card.Body>
@@ -47,7 +63,7 @@ const HomePage = () => {
                   </Col>
                   <Col sm={10}>
                     {" "}
-                    <Card.Title>Helth State</Card.Title>
+                    <Card.Title>{halthStatus}</Card.Title>
                     <Card.Title>Last Update</Card.Title>
                   </Col>
                 </Row>

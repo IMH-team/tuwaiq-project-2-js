@@ -2,8 +2,30 @@ import React from "react";
 import "./profile.css";
 import Navigation from "../navigation/index";
 import Footer from "../footer/index";
+import { useState, useEffect } from "react";
+
 import { Container, Row, Card, Col, Button } from "react-bootstrap";
 const Profile = () => {
+
+  const [name, setName] = useState("");
+  const [nationalId, setNationalId] = useState("");
+  const [birthDate, setbirthDate] = useState("");
+  const [gender, setgender] = useState("");
+  const [bloodType, setbloodType] = useState("");
+  useEffect(() => {
+    fetch("/logIn")
+      .then((response) => response.json())
+      .then((data) => {
+        const info = data.find((user) => user.userId === "0000000000");
+        // console.log(info.username);
+        setName(info.username);
+        setNationalId(info.userId);
+        setbirthDate(info.birthDate);
+        setgender(info.gender);
+        setbloodType(info.bloodType);
+      });
+  }, []);
+
   return (
     <div className="App">
       <Navigation />
@@ -32,23 +54,23 @@ const Profile = () => {
                   </Row>
                   <Col sm={4}>
                     <Card.Text>Name</Card.Text>
-                    <Card.Text className="text-color">Name</Card.Text>
+                    <Card.Text className="text-color">{name}</Card.Text>
                   </Col>
                   <Col sm={2}>
                     <Card.Text>National ID</Card.Text>
-                    <Card.Text className="text-color">National ID</Card.Text>
+                    <Card.Text className="text-color">{nationalId}</Card.Text>
                   </Col>
                   <Col sm={2}>
                     <Card.Text>Birthdate</Card.Text>
-                    <Card.Text className="text-color">date</Card.Text>
+                    <Card.Text className="text-color">{birthDate}</Card.Text>
                   </Col>
                   <Col sm={2}>
                     <Card.Text>Gender</Card.Text>
-                    <Card.Text className="text-color">gender</Card.Text>
+                    <Card.Text className="text-color">{gender}</Card.Text>
                   </Col>
                   <Col sm={2}>
                     <Card.Text>Blood Type</Card.Text>
-                    <Card.Text className="text-color">National ID</Card.Text>
+                    <Card.Text className="text-color">{bloodType}</Card.Text>
                   </Col>
                 </Row>
                 <hr />
