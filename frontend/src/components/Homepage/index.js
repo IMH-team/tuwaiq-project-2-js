@@ -2,6 +2,8 @@ import React from "react";
 import { Container, Row, Card, Col, Form, Button } from "react-bootstrap";
 import "./homepage.css";
 import axios from "axios";
+import Navigation from "../navigation/index";
+import Footer from "../footer/index";
 import { useState, useEffect } from "react";
 
 const HomePage = () => {
@@ -48,6 +50,7 @@ const HomePage = () => {
 
   return (
     <div className="App">
+      <Navigation />
       <Container>
         <Row>
           <Col sm={8}>
@@ -302,6 +305,7 @@ const HomePage = () => {
           </Col>
         </Row>
       </Container>
+      <Footer />
     </div>
   );
 };

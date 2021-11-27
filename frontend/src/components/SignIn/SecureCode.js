@@ -53,7 +53,7 @@ const SecureCode = () => {
                   variant="success"
                   onClick={() => {
                     if (secureCode === code) {
-                      window.location.href = "/";
+                      window.location.href = "/HomePage";
                       setDisplay("none");
                     } else {
                       setDisplay("Block");
