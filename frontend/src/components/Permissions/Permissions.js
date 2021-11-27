@@ -19,7 +19,9 @@ export default function Permissions() {
     (async () => {
       const response = await fetch("/permissions");
       const data = await response.json();
-      const info = data.find((user) => user.userId === "1111111111");
+      const info = data.find(
+        (user) => user.userId === sessionStorage.getItem("userId")
+      );
       setData(info.permission);
     })();
   }, []);
@@ -114,7 +116,7 @@ export default function Permissions() {
         </Row>
       </Container>
       {/* Current prims */}
-      <Container >
+      <Container>
         <Row>
           <Col>
             <Card className="permits">
@@ -138,7 +140,7 @@ export default function Permissions() {
                     data.map((elem) => {
                       console.log(elem.type);
                       return (
-                        <MyPerCard 
+                        <MyPerCard
                           key={elem.type}
                           type={elem.type}
                           place={elem.place}
@@ -148,8 +150,14 @@ export default function Permissions() {
                     })}
                 </Row>
               ) : (
-                <div style={{ textAlign: "center",  marginLeft: "auto",
-                marginRight: "auto", width: "50%" }}>
+                <div
+                  style={{
+                    textAlign: "center",
+                    marginLeft: "auto",
+                    marginRight: "auto",
+                    width: "50%",
+                  }}
+                >
                   <svg
                     id="svg"
                     xmlns="http://www.w3.org/2000/svg"

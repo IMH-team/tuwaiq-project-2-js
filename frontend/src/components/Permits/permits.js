@@ -12,15 +12,17 @@ import axios from "axios";
 import Navigation from "../navigation/index";
 import Footer from "../footer/index";
 import "./Permits.css";
+
 export default function Permits() {
   const [Permits, setPermits] = useState({});
   const [type, setType] = useState("");
   const [place, setPlace] = useState("");
   const [numberOfPeople, setNumberOfPeople] = useState(0);
+
   function savePermissions() {
     axios({
       method: "post",
-      url: "/permissions/1111111111",
+      url: `/permissions/${sessionStorage.getItem("userId")}`,
       data: {
         type: type,
         place: place,
@@ -90,7 +92,7 @@ export default function Permits() {
               </Form.Group>{" "}
               <FormGroup>
                 <Button
-                id="Requst-botton"
+                  id="Requst-botton"
                   variant="secondary"
                   style={{
                     backgroundColor: "#2EAFA1",

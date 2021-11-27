@@ -1,10 +1,16 @@
 const express = require("express");
 const logInRouter = express.Router();
 
-const { getDataForLogIn } = require("../controllers/logIn");
+const {
+  getDataForLogIn,
+  getAllUsers,
+  changeHealthStatus,
+  changePassword,
+} = require("../controllers/logIn");
 
-logInRouter.get("/", getDataForLogIn);
+logInRouter.post("/", getDataForLogIn);
+logInRouter.get("/", getAllUsers);
+logInRouter.put("/:id", changeHealthStatus);
+logInRouter.put("/", changePassword);
 
-
-
-module.exports = {logInRouter};
+module.exports = { logInRouter };

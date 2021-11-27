@@ -15,6 +15,9 @@ app.use("/users", userRouter);
 
 //log in
 app.use("/logIn", logInRouter);
+app.use("/usersData", logInRouter);
+app.use("/changeHealth", logInRouter);
+app.use("/changePassword", logInRouter);
 
 // permissions
 app.use("/permissions", permissionsRouter);

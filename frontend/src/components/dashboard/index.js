@@ -12,7 +12,9 @@ const Dashboard = () => {
     (async () => {
       const response = await fetch("/users");
       const data = await response.json();
-      const info = data.find((user) => user.userId === "1010101010");
+      const info = data.find(
+        (user) => user.userId === sessionStorage.getItem("userId")
+      );
       setData(info.userInfo);
     })();
   }, []);

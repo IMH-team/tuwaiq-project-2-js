@@ -1,28 +1,33 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Button, Container, Row, Card, Col } from "react-bootstrap";
+import { Button, Container, Row, Card, Col, Alert } from "react-bootstrap";
+import axios from "axios";
 import "./signin.css";
-import axios from 'axios';
-import { useState } from "react";
 
 const SignIn = () => {
+  const [NationalId, setNationalId] = useState("");
   const [password, setPassword] = useState("");
-  const [nationalId, setNationalId] = useState("");
-// console.log(nationalId);
+  const [display, setDisplay] = useState("none");
+
   function getLoginData() {
     axios
       .post("/logIn", {
-        userId: nationalId,
+        userId: NationalId,
         password: password,
       })
       .then((res) => {
-        console.log(res.data);
         if (res.data !== undefined) {
+          sessionStorage.setItem(
+            "secureCode",
+            Math.floor(1000 + Math.random() * 9000)
+          );
+          sessionStorage.setItem("isAdmin", res.data.isAdmin);
           sessionStorage.setItem("userId", res.data.userId);
-          window.location.href = "/";
+          window.location.href = "/SecureCode";
         }
       })
       .catch((err) => {
+        setDisplay("Block");
         console.log(err.res);
       });
   }
@@ -36,6 +41,7 @@ const SignIn = () => {
             <img
               id="twakklna-logo"
               src="https://tawakkalna.sdaia.gov.sa/assets/img/illustrations/twlogo.png"
+              alt=""
             />
           </Col>
           <Col sm={4}></Col>
@@ -50,19 +56,23 @@ const SignIn = () => {
                     <Card.Title>Login</Card.Title>
                   </Col>
                   <Col id="signUp">
-                    <Link to="/SignUp" className="colorLink">
+                    <Link to="" className="colorLink">
                       Sign up
                     </Link>
                   </Col>
                 </Row>
+                <Alert variant="danger" style={{ display: display }}>
+                  National ID or Password incorrect !!
+                </Alert>
                 <Card.Text>
                   <input
                     className="inputsToLogIn"
                     type="text"
                     name="NationalId"
                     placeholder="   National-ID/Iqama"
-                    onChange={(e) => setNationalId(e.target.value)}
-                    
+                    onChange={(e) => {
+                      setNationalId(e.target.value);
+                    }}
                   />
                   <input
                     className="inputsToLogIn"
@@ -82,7 +92,13 @@ const SignIn = () => {
                     </Link>
                   </Col>
                 </Row>
-                <Button onClick={getLoginData} id="login" variant="success">
+                <Button
+                  id="login"
+                  variant="success"
+                  onClick={() => {
+                    getLoginData();
+                  }}
+                >
                   Next
                 </Button>{" "}
               </Card.Body>

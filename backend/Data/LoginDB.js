@@ -8,26 +8,29 @@ const LoginUser = [
     password: "123",
     //Immune محصن          Exposed مخالط         Infected مصاب
     healthStatus: "Immune",
+    isAdmin: true,
   },
   {
     username: "Hamad Sarrar Algubari",
     userId: "1111111111",
-    birthDate: "01/01/1418",
+    birthDate: "08/01/1417",
     gender: "Male",
-    bloodType: "A+",
+    bloodType: "O-",
     password: "123",
     //Immune محصن          Exposed مخالط         Infected مصاب
-    healthStatus: "Immune",
+    healthStatus: "Exposed",
+    isAdmin: false,
   },
   {
     username: "Ibrahim Nashir Alyami",
     userId: "0000000000",
-    birthDate: "01/01/1418",
+    birthDate: "01/11/1419",
     gender: "Male",
-    bloodType: "A+",
+    bloodType: "AB",
     password: "123",
     //Immune محصن          Exposed مخالط         Infected مصاب
-    healthStatus: "Immune",
+    healthStatus: "Infected",
+    isAdmin: false,
   },
 ];
 

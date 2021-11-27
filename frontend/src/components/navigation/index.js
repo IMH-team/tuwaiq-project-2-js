@@ -16,13 +16,12 @@ import {
   Dropdown,
 } from "react-bootstrap";
 
-
 const Navigation = () => {
   return (
     <div className="App">
       <Container>
         <Row>
-          <Navbar  expand={false}>
+          <Navbar expand={false}>
             <Col sm>
               <Navbar.Toggle aria-controls="offcanvasNavbar" />
               <Navbar.Offcanvas
@@ -107,7 +106,10 @@ const Navigation = () => {
                 </Offcanvas.Body>
               </Navbar.Offcanvas>
               <Navbar.Brand href="#">
-                <img src="https://tawakkalna.sdaia.gov.sa/assets/img/illustrations/twlogo.png" alt=""/>
+                <img
+                  src="https://tawakkalna.sdaia.gov.sa/assets/img/illustrations/twlogo.png"
+                  alt=""
+                />
               </Navbar.Brand>
             </Col>
             <Col sm></Col>
@@ -121,7 +123,7 @@ const Navigation = () => {
                 </Dropdown.Toggle>
                 <Dropdown.Menu>
                   <Dropdown.Item href="/Profile">My profile</Dropdown.Item>
-                  <Link to="/SignIn"><Dropdown.Item href="#/action-2">Sign out</Dropdown.Item></Link>
+                  <Dropdown.Item href="/SignIn">Sign out</Dropdown.Item>
                 </Dropdown.Menu>
               </Dropdown>
             </Col>
