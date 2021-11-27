@@ -3,20 +3,26 @@ import "./profile.css";
 import Navigation from "../navigation/index";
 import Footer from "../footer/index";
 import { useState, useEffect } from "react";
-
+import axios from "axios";
 import { Container, Row, Card, Col, Button } from "react-bootstrap";
-const Profile = () => {
 
+const Profile = () => {
   const [name, setName] = useState("");
   const [nationalId, setNationalId] = useState("");
   const [birthDate, setbirthDate] = useState("");
   const [gender, setgender] = useState("");
   const [bloodType, setbloodType] = useState("");
+
+  // Change Password
+  const [password, setPassword] = useState("");
+
   useEffect(() => {
     fetch("/logIn")
       .then((response) => response.json())
       .then((data) => {
-        const info = data.find((user) => user.userId === "0000000000");
+        const info = data.find(
+          (user) => user.userId === sessionStorage.getItem("userId")
+        );
         // console.log(info.username);
         setName(info.username);
         setNationalId(info.userId);
@@ -25,6 +31,17 @@ const Profile = () => {
         setbloodType(info.bloodType);
       });
   }, []);
+
+  function updatePassword() {
+    axios
+      .put(`/changePassword?id=${sessionStorage.getItem("userId")}`, {
+        password: password,
+      })
+      .then((res) => {})
+      .catch((err) => {
+        console.log(err.res);
+      });
+  }
 
   return (
     <div className="App">
@@ -35,10 +52,9 @@ const Profile = () => {
             <Card id="MyProfile">
               <Card.Body>
                 <Row>
-                  <Card.Title>My Profile </Card.Title>
                   <Row>
                     {" "}
-                    <Card.Text  id="personal">
+                    <Card.Text id="personal">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="16"
@@ -74,7 +90,7 @@ const Profile = () => {
                   </Col>
                 </Row>
                 <hr />
-                <Row >
+                <Row>
                   <Card.Text id="personal">
                     <svg
                       id="logo-members"
@@ -119,7 +135,7 @@ const Profile = () => {
                 </Row>
                 <hr />
                 <Row>
-                  <Row >
+                  <Row>
                     {" "}
                     <Card.Text id="personal">
                       <svg
@@ -145,11 +161,21 @@ const Profile = () => {
                           type="password"
                           name="password"
                           placeholder="   Change Password"
+                          onChange={(e) => {
+                            setPassword(e.target.value);
+                          }}
                         />
                       </Col>
                       <Row>
                         <Col>
-                          <Button id="Save" variant="primary">
+                          <Button
+                            id="Save"
+                            variant="primary"
+                            onClick={() => {
+                              updatePassword();
+                              window.location.href = "/SignIn";
+                            }}
+                          >
                             Save
                           </Button>{" "}
                         </Col>
