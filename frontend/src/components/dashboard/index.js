@@ -15,6 +15,8 @@ const Dashboard = () => {
       const info = data.find(
         (user) => user.userId === sessionStorage.getItem("userId")
       );
+
+      console.log(info);
       setData(info.userInfo);
     })();
   }, []);
