@@ -192,7 +192,7 @@ const HomePage = () => {
                       }}
                       onClick={() => {
                         updateHealthStatus();
-                        window.location.href = "/";
+                        window.location.href = "/HomePage";
                       }}
                     >
                       Save
