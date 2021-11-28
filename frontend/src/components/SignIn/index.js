@@ -56,7 +56,7 @@ const SignIn = () => {
                     <Card.Title>Login</Card.Title>
                   </Col>
                   <Col id="signUp">
-                    <Link to="" className="colorLink">
+                    <Link to="/SignUp" className="colorLink">
                       Sign up
                     </Link>
                   </Col>
