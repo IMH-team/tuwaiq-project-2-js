@@ -3,9 +3,12 @@ const permissions = [
     userId: "1010101010",
     permission: [
       {
+        startDate: "",
+        endDate: "",
         type: "Govirment",
         place: "Najran",
         numberOfPeople: "20",
+        situation:"",
         
       },
     ],
