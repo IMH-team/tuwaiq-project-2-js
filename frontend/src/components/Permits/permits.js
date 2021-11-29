@@ -7,6 +7,7 @@ import {
   Form,
   Button,
   FormGroup,
+  Alert,
 } from "react-bootstrap";
 import axios from "axios";
 import Navigation from "../navigation/index";
@@ -14,16 +15,21 @@ import Footer from "../footer/index";
 import "./Permits.css";
 
 export default function Permits() {
+  const [startDate, setStart] = useState("");
+  const [endDate, setEnd] = useState("");
   const [Permits, setPermits] = useState({});
   const [type, setType] = useState("");
   const [place, setPlace] = useState("");
   const [numberOfPeople, setNumberOfPeople] = useState(0);
+  const [display, setDisplay] = useState("none");
 
   function savePermissions() {
     axios({
       method: "post",
       url: `/permissions/${sessionStorage.getItem("userId")}`,
       data: {
+        startDate: startDate,
+        endDate: endDate,
         type: type,
         place: place,
         numberOfPeople: numberOfPeople,
@@ -35,6 +41,7 @@ export default function Permits() {
         console.log(Permits);
       })
       .catch((error) => {
+        setDisplay("block");
         console.log(error);
       });
   }
@@ -89,7 +96,33 @@ export default function Permits() {
                   placeholder="Number of expected Visitors"
                   onChange={(e) => setNumberOfPeople(e.target.value)}
                 />
-              </Form.Group>{" "}
+              </Form.Group>
+              <Row>
+                <Alert variant="danger" style={{ display: display }}>
+                  Date is wrong! please check
+                </Alert>
+                <Col>
+                  <Form.Group className="mb-3" controlId="formBasicEmail">
+                    <Form.Label> Start Date </Form.Label>{" "}
+                    <Form.Control
+                      type="date"
+                      onChange={(e) => {
+                        setStart(e.target.value);
+                        console.log(startDate);
+                      }}
+                    ></Form.Control>
+                  </Form.Group>
+                </Col>
+                <Col>
+                  <Form.Group className="mb-3" controlId="formBasicEmail">
+                    <Form.Label> End Date </Form.Label>{" "}
+                    <Form.Control
+                      type="date"
+                      onChange={(e) => setEnd(e.target.value)}
+                    ></Form.Control>
+                  </Form.Group>
+                </Col>
+              </Row>
               <FormGroup>
                 <Button
                   id="Requst-botton"
@@ -99,6 +132,21 @@ export default function Permits() {
                     width: "25%",
                   }}
                   onClick={() => {
+                    let a = new Date().getFullYear();
+                    let b = new Date().getMonth() + 1;
+                    let c = new Date().getDate();
+                    let day = startDate.split("-");
+                    let year = parseInt(day[0]);
+                    let month = parseInt(day[1])
+                    let dayyy = parseInt(day[2])
+                    // console.log(typeof day1);
+
+
+                    if (startDate > endDate) {
+                      return setDisplay("block");
+                    } else if (year < a || month < b || dayyy < c) {
+                      return setDisplay("block");
+                    }
                     savePermissions();
                     window.location.href = "/Permissions";
                   }}

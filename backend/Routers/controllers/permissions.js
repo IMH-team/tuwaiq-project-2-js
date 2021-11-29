@@ -9,9 +9,12 @@ const getAllPermessions = (req, res) => {
 const putPermession = (req, res) => {
     const user = permissions.find((elem) => elem.userId === req.params.id);
     const newData = {
+        startDate: req.body.startDate,
+        endDate: req.body.endDate,
         type: req.body.type,
         place: req.body.place,
         numberOfPeople: req.body.numberOfPeople,
+        situation: req.body.situation
     }
     
     user.permission.push(newData)
