@@ -1,22 +1,30 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
 import "./navigation.css";
 import {
   Container,
   Row,
-  NavDropdown,
   Col,
   Offcanvas,
   Nav,
-  Form,
-  Button,
-  FormControl,
   Navbar,
-  DropdownButton,
+  Card,
   Dropdown,
 } from "react-bootstrap";
+import { BsBell } from "react-icons/bs";
 
 const Navigation = () => {
+  const [display, setDisplay] = useState("none");
+  const [notifications, setNotifications] = useState([]);
+
+  useEffect(() => {
+    const notifications = JSON.parse(localStorage.getItem("notifications"));
+    const userNotifications = notifications.filter(
+      (notifications) =>
+        notifications.userId === sessionStorage.getItem("userId")
+    );
+    setNotifications(userNotifications);
+  }, []);
+
   return (
     <div className="App">
       <Container>
@@ -117,18 +125,55 @@ const Navigation = () => {
             <Col sm></Col>
             <Col sm></Col>
             <Col sm>
-              <Dropdown>
-                <Dropdown.Toggle variant="success" id="dropdown-basic">
-                  My Profile
-                </Dropdown.Toggle>
-                <Dropdown.Menu>
-                  <Dropdown.Item href="/Profile">My profile</Dropdown.Item>
-                  <Dropdown.Item href="/SignIn">Sign out</Dropdown.Item>
-                </Dropdown.Menu>
-              </Dropdown>
+              <Row>
+                <Col>
+                  <BsBell
+                    className="Bell"
+                    onClick={() => {
+                      if (display === "none") {
+                        setDisplay("block");
+                      } else {
+                        setDisplay("none");
+                      }
+                    }}
+                  />
+                  <span className="Num-alert">
+                    {notifications && notifications.length}
+                  </span>
+                </Col>
+                <Col>
+                  <Dropdown>
+                    <Dropdown.Toggle variant="success" id="dropdown-basic">
+                      My Profile
+                    </Dropdown.Toggle>
+                    <Dropdown.Menu>
+                      <Dropdown.Item href="/Profile">My profile</Dropdown.Item>
+                      <Dropdown.Item href="/SignIn">Sign out</Dropdown.Item>
+                    </Dropdown.Menu>
+                  </Dropdown>
+                </Col>
+              </Row>
             </Col>
           </Navbar>
         </Row>
+        <Card
+          style={{
+            width: "20%",
+            position: "absolute",
+            zIndex: "99",
+            right: "144px",
+            top: "60px",
+            display: display,
+          }}
+        >
+          {notifications &&
+            notifications.map((elem) => (
+              <Card.Body>
+                <Card.Title>{elem.title}</Card.Title>
+                <Card.Text>{elem.description}</Card.Text>
+              </Card.Body>
+            ))}
+        </Card>
       </Container>
     </div>
   );

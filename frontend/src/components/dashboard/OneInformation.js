@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { Container, Row, Card, Col } from "react-bootstrap";
+import { Container, Row, Card, Col, Button } from "react-bootstrap";
 import Navigation from "../navigation/index";
 import Footer from "../footer/index";
 import "./OneInformation.css";
@@ -24,6 +24,11 @@ export default function OneInformation() {
     <>
       <Navigation />
       <Container className="myContainer">
+        <a href="/Dashboard">
+          <Button id="Back-button" variant="secondary" className="Back-button">
+            Back{" "}
+          </Button>
+        </a>
         <Row md={3}>
           <Col>
             {data &&
@@ -31,7 +36,7 @@ export default function OneInformation() {
                 console.log(name);
                 if (name === "Driving_Licenses") {
                   return (
-                    <Card className="myCard">
+                    <Card>
                       <Card.Body style={{ textAlign: "center" }}>
                         <Card.Text>
                           <Row>
@@ -62,7 +67,7 @@ export default function OneInformation() {
                   );
                 } else if (name === "National_Address") {
                   return (
-                    <Card className="myCard">
+                    <Card>
                       <Card.Body style={{ textAlign: "center" }}>
                         <Card.Text>
                           <Row>
