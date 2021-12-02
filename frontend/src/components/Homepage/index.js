@@ -6,7 +6,7 @@ import Navigation from "../navigation/index";
 import Footer from "../footer/index";
 import { useState, useEffect } from "react";
 
-const HomePage = () => {
+function HomePage() {
   const [name, setName] = useState("");
   const [nationalId, setNationalId] = useState("");
   const [halthStatus, setHalthStatus] = useState("");
@@ -46,6 +46,25 @@ const HomePage = () => {
       .catch((err) => {
         console.log(err.res);
       });
+  }
+
+  function saveNotifications() {
+    const notifications = JSON.parse(localStorage.getItem("notifications"));
+    const notification = {
+      userId: userNationalId,
+      title: "Change Health Status",
+      adminId: nationalId,
+      description: `Your Health Status change to ${userNewHealthStatus}`,
+    };
+
+    if (notifications !== null) {
+      notifications.push(notification);
+      localStorage.setItem("notifications", JSON.stringify(notifications));
+    } else {
+      let notifications = [];
+      notifications.push(notification);
+      localStorage.setItem("notifications", JSON.stringify(notifications));
+    }
   }
 
   return (
@@ -192,6 +211,7 @@ const HomePage = () => {
                       }}
                       onClick={() => {
                         updateHealthStatus();
+                        saveNotifications();
                         window.location.href = "/HomePage";
                       }}
                     >
@@ -308,6 +328,6 @@ const HomePage = () => {
       <Footer />
     </div>
   );
-};
+}
 
 export default HomePage;
