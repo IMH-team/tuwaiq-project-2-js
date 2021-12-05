@@ -18,11 +18,14 @@ const Navigation = () => {
 
   useEffect(() => {
     const notifications = JSON.parse(localStorage.getItem("notifications"));
-    const userNotifications = notifications.filter(
-      (notifications) =>
-        notifications.userId === sessionStorage.getItem("userId")
-    );
-    setNotifications(userNotifications);
+    if (notifications !== null) {
+      const userNotifications = notifications.filter(
+        (notifications) =>
+          notifications.userId === sessionStorage.getItem("userId") &&
+          notifications.isReading === false
+      );
+      setNotifications(userNotifications);
+    }
   }, []);
 
   return (

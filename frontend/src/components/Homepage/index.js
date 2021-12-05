@@ -55,15 +55,22 @@ function HomePage() {
       title: "Change Health Status",
       adminId: nationalId,
       description: `Your Health Status change to ${userNewHealthStatus}`,
+      isReading: false,
     };
 
     if (notifications !== null) {
       notifications.push(notification);
-      localStorage.setItem("notifications", JSON.stringify(notifications));
+      localStorage.setItem(
+        "notifications",
+        JSON.stringify(notifications.reverse())
+      );
     } else {
       let notifications = [];
       notifications.push(notification);
-      localStorage.setItem("notifications", JSON.stringify(notifications));
+      localStorage.setItem(
+        "notifications",
+        JSON.stringify(notifications.reverse())
+      );
     }
   }
 
