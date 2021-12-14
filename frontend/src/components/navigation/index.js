@@ -42,7 +42,7 @@ const Navigation = () => {
                 <Offcanvas.Header closeButton>
                   <Offcanvas.Title id="offcanvasNavbarLabel"></Offcanvas.Title>
                 </Offcanvas.Header>
-                <Offcanvas.Body>
+                <Offcanvas.Body id="scroll">
                   <Nav className="justify-content-end flex-grow-1 pe-3">
                     <Nav.Link href="/HomePage">
                       <svg
@@ -159,9 +159,9 @@ const Navigation = () => {
             </Col>
           </Navbar>
         </Row>
-        <Card
+        <Card 
           style={{
-            width: "20%",
+            marginLeft:"10%",
             position: "absolute",
             zIndex: "99",
             right: "144px",
