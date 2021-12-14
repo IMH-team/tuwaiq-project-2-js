@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <Container className="footer">
       <Row>
-        <Col xs={12}>
+        <Col sm={12}>
           <Navbar variant="light">
             <Container id="foot">
               <Nav className="me-auto">
@@ -26,7 +26,7 @@ const Footer = () => {
                   FAQs
                 </Nav.Link>
                 <Nav.Link className="footer-links" href="#pricing">
-                  Contact Us
+                  Contact
                 </Nav.Link>
               </Nav>
             </Container>

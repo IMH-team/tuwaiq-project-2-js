@@ -48,7 +48,7 @@ const Profile = () => {
       <Navigation />
       <Container>
         <Row id="profile">
-          <Col sm={11}>
+          <Col sm={12}>
             <Card id="MyProfile">
               <Card.Body>
                 <Row>
@@ -167,7 +167,7 @@ const Profile = () => {
                         />
                       </Col>
                       <Row>
-                        <Col>
+                        <Col sm={12}>
                           <Button
                             id="Save"
                             variant="primary"

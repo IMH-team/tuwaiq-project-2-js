@@ -129,7 +129,7 @@ export default function Permits() {
                   variant="secondary"
                   style={{
                     backgroundColor: "#2EAFA1",
-                    width: "25%",
+                    
                   }}
                   onClick={() => {
                     let a = new Date().getFullYear();

@@ -13,6 +13,9 @@ img {
 .collapsed {
   border: none !important;
 }
+#scroll{
+  overflow-y: hidden;
+}
 .App {
   margin-top: 20px;
 }
@@ -75,5 +78,7 @@ svg {
     rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
 #offcanvasNavbar {
+  width: 350px;
+  
   background-image: linear-gradient(-45deg, #aac19e, #2eafa1);
 }
